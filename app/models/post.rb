@@ -10,6 +10,7 @@ class Post < ActiveRecord::Base
     clickbait_titles = ["Won't Believe", "Secret","Top/[0..9]/", "Guess"]
     if !!title
       clickbait_titles.each do |t|
+        binding.pry
         if !title.include?(t)
           errors.add(:title_is_not_clickbait, "title is not clickbait-y!")
           break
