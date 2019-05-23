@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
     clickbait_titles = ["Won't Believe", "Secret","Top/[0..9]/", "Guess"]
     if !!title
       is_clickbait = false
-      for i in 0..clickbait_titles.length do
+      for i in 0...clickbait_titles.length do
         binding.pry
         if title.include?(clickbait_titles[i])
           is_clickbait = true
