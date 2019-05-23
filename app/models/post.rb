@@ -11,10 +11,11 @@ class Post < ActiveRecord::Base
     if !!title
       clickbait_titles.each do |t|
         if !title.include?(t)
-          errors.add
+          errors.add(:title_is_not_clickbait, "title is not clickbait-y!")
+          break
+        end
       end
-      && !title.include?("Won't Believe")
-      errors.add(:title_is_not_clickbait, "title is not clickbait-y!")
     end
   end
+  
 end
