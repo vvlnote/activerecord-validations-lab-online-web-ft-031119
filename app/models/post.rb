@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
         end
       end
       if !is_clickbait
-        errors
+        errors.add(:title_is_not_clickbait, "title is not clickbait-y!"
       end
     end
   end
