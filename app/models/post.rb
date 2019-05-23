@@ -11,6 +11,7 @@ class Post < ActiveRecord::Base
     if !!title
       is_clickbait = false
       for i in 0..clickbait_titles.length do
+        binding.pry
         if title.include?(clickbait_titles[i])
           is_clickbait = true
           break
