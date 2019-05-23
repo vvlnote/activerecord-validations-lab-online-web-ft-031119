@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   validate :title_is_clickbait
   
   def title_is_clickbait
-    clickbait_titles = ["Won't Believe", "Secret","Top/[0..9]/", "Guess"]
+    clickbait_titles = ["Won't Believe", "Secret","Top/0..9/", "Guess"]
     if !!title
       is_clickbait = false
       for i in 0...clickbait_titles.length do
