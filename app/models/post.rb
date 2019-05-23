@@ -9,6 +9,8 @@ class Post < ActiveRecord::Base
   def title_is_clickbait
     clickbait_titles = ["Won't Believe", "Secret","Top/[0..9]/", "Guess"]
     if !!title
+      is_exit = false
+      for 
       clickbait_titles.each do |t|
         binding.pry
         if !title.include?(t)
